@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.borderR {
+  border-radius: 32% 68% 66% 34% / 40% 37% 63% 60%;
+  background-color: aquamarine;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: teal;
+}
+::-webkit-scrollbar-thumb {
+  background-color: aquamarine;
+  border-radius: 10px;
+}
+
+.myBorderClass {
+  @apply pr-2 text-cyan-500 text-3xl  border-teal-600 border-r-2;
+}
+
+.myText{
+  @apply animate-pulse bg-gradient-to-r from-teal-600 via-blue-300 to-rose-600 bg-clip-text text-transparent font-black font-mono transition duration-1000
+
+}
+.borderAnimation {
+  @apply border-2 border-teal-600 border-opacity-0 hover:border-opacity-100 duration-500;
+}
+
+
+.myTextAnimation {
+  background: #17cf6d;
+  background: repeating-radial-gradient(
+    ellipse farthest-corner at center center,
+    #3bcc13 0%,
+    #001010 87%,
+    #075555 74%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.myBGG {
+  background-image: url("https://i.ibb.co/f0rr7XS/photo-1523961131990-5ea7c61b2107-q-80-w-1974-auto-format-fit-crop-ixlib-rb-4-0.jpg");
+  height: 25px;
+  width: 25px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.navBtn {
+  @apply text-xl before:block before:absolute hover:before:bg-blue-300 before:w-0 before:h-0 hover:before:h-20 hover:before:w-40 before:-bottom-2 before:-right-2 before:duration-500 before:rounded-xl before:-z-10 relative inline-block transform hover:text-white  bg-transparent border-[1px] overflow-hidden border-blue-300 duration-500;
+}
+.Btn3 {
+  @apply outline text-xl outline-1 duration-500 transform hover:bg-blue-200 rounded outline-blue-300;
+}
+
+.Btn2 {
+  @apply text-xl before:flex before:absolute hover:before:bg-teal-500 before:w-0 before:h-0 hover:before:h-20 hover:before:w-40 before:-bottom-2 before:-right-2 before:duration-500 before:rounded-xl before:-z-10 relative flex gap-2 py-2 px-4 items-center transform hover:text-white  bg-transparent border-2 overflow-hidden border-blue-300 rounded duration-500;
+}
+
+@keyframes slideRocket {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+  10% {
+    bottom: 10%;
+    left: 10%;
+  }
+  25% {
+    bottom: 25%;
+    left: 25%;
+  }
+  40% {
+    bottom: 40%;
+    left: 40%;
+  }
+  50% {
+    bottom: 50%;
+    left: 50%;
+  }
+  60% {
+    bottom: 60%;
+    left: 60%;
+  }
+  75% {
+    bottom: 75%;
+    left: 75%;
+  }
+  90% {
+    bottom: 90%;
+    left: 90%;
+  }
+  100% {
+    top: 0;
+    right: 0;
+  }
+}

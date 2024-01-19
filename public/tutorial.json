@@ -1,0 +1,121 @@
+[
+  {
+    "id": "OC-1",
+    "CourseName": "Object Oriented Programming",
+    "semester": 12,
+    "topic": "22-11-2023 (Part I)",
+    "classURL": "U4B5_MsM6kY"
+  },
+  {
+    "id": "OC-2",
+    "CourseName": "Object Oriented Programming",
+    "semester": 12,
+    "topic": "22-11-2023(Part II)",
+    "classURL": "Uo3WtiiUaco"
+  },
+  {
+    "id": "OC-3",
+    "CourseName": "Economics",
+    "semester": 12,
+    "topic": "17/09/2023",
+    "classURL": "QIC2eUsJnXc"
+  },
+  {
+    "id": "OC-4",
+    "CourseName": "Data Structure",
+    "semester": 12,
+    "topic": "09/11/2023",
+    "classURL": "JLOGFdun5wE"
+  },
+  {
+    "id": "OC-5",
+    "CourseName": "Data Structure",
+    "semester": 12,
+    "topic": "06/11/2023",
+    "classURL": "-wlo9Guv3nM"
+  },
+  {
+    "id": "OC-6",
+    "CourseName": "Data Structure",
+    "semester": 12,
+    "topic": "05/10/2023",
+    "classURL": "cf7xXsR0uGM"
+  },
+  {
+    "id": "OC-7",
+    "CourseName": "Linear ALgebra",
+    "semester": 12,
+    "topic": "01/11/2023",
+    "classURL": "93ETVp6lG_M"
+  },
+  {
+    "id": "OC-8",
+    "CourseName": "Basic Electronics",
+    "semester": 12,
+    "topic": "31/10/2023",
+    "classURL": "2pFKmfZQ_z8"
+  },
+  {
+      "id": "OC-9",
+      "CourseName": "Economics",
+      "semester": 12,
+      "topic": "10/10/2023",
+      "classURL": "eLbTVN0Og3Q"
+  },
+  {
+      "id": "OC-10",
+      "CourseName": "Economics",
+      "semester": 12,
+      "topic": "03/10/2023",
+      "classURL": "kCqqmYqAiuY"
+  },
+  {
+      "id": "OC-11",
+      "CourseName": "Economics",
+      "semester": 12,
+      "topic": "26/09/2023",
+      "classURL": "FiNMJUSD3z0"
+  },
+  {
+      "id": "OC-12",
+      "CourseName": "Economics",
+      "semester": 12,
+      "topic": "24/09/2023",
+      "classURL": "aye5GiRU6lY"
+  },
+  {
+      "id": "OC-13",
+      "CourseName": "Economics",
+      "semester": 12,
+      "topic": "20/09/2023(Part I)",
+      "classURL": "DWqiDUnt0VA"
+  },
+  {
+      "id": "OC-14",
+      "CourseName": "Economics",
+      "semester": 12,
+      "topic": "20/09/2023(Part II)",
+      "classURL": "vz01Rg2sMqw"
+  },
+  {
+      "id": "OC-15",
+      "CourseName": "Economics",
+      "semester": 12,
+      "topic": "20/09/2023(Part III)",
+      "classURL": "Y0XFwGCXAsE"
+  },
+  {
+      "id": "OC-16",
+      "CourseName": "Data Structure",
+      "semester": 12,
+      "topic": "DFS",
+      "classURL": "AMJY7gGweLQ"
+  },
+  {
+      "id": "OC-17",
+      "CourseName": "Data Structure",
+      "semester": 12,
+      "topic": "BFS",
+      "classURL": "TEzgeUogELQ"
+  }
+]

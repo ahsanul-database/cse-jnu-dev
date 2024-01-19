@@ -1,0 +1,128 @@
+[
+  {
+    "ID": "CSEF-1",
+    "Name": "Dr. Uzzal Kumar Acharjee",
+    "Designation": "Professor & Chairman",
+    "Email": "uzzal@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-2",
+    "Name": "Dr. Mohammed Nasir Uddin",
+    "Designation": "Professor",
+    "Email": "nasir@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-3",
+    "Name": "Dr. Md. Masbaul Alam Polash",
+    "Designation": "Associate Professor",
+    "Email": "polash@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-4",
+    "Name": "Dr. Md. Abu Layek",
+    "Designation": "Associate Professor",
+    "Email": "abulayek@yahoo.com"
+  },
+  {
+    "ID": "CSEF-5",
+    "Name": "Dr. Md. Zulfiker Mahmud",
+    "Designation": "Associate Professor",
+    "Email": "zulfiker@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-6",
+    "Name": "Dr. Selina Sharmin",
+    "Designation": "Associate Professor",
+    "Email": "selina@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-7",
+    "Name": "Dr. Md. Manowarul Islam",
+    "Designation": "Associate Professor",
+    "Email": "manowar@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-8",
+    "Name": "Dr. Md. Ashraf Uddin",
+    "Designation": "Associate Professor",
+    "Email": "ashraf@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-9",
+    "Name": "Dr. Sajeeb Saha",
+    "Designation": "Associate Professor",
+    "Email": "sajeeb@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-10",
+    "Name": "Md. Arafat Hossain Khan (On Study Leave)",
+    "Designation": "Assistant Professor",
+    "Email": "arafat@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-11",
+    "Name": "Mehnaz Tabassum (Study Leave)",
+    "Designation": "Assistant Professor",
+    "Email": "mehnaz@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-12",
+    "Name": "Md. Aminul Islam (On Study Leave)",
+    "Designation": "Assistant Professor",
+    "Email": "aminul@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-13",
+    "Name": "Sajal Halder (On Study Leave)",
+    "Designation": "Assistant Professor",
+    "Email": "sajal@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-14",
+    "Name": "Nayeema Islam",
+    "Designation": "Assistant Professor",
+    "Email": "nayeema@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-15",
+    "Name": "Roksana Khanom",
+    "Designation": "Assistant Professor",
+    "Email": "roksana@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-16",
+    "Name": "Sonia Corraya (On Study Leave)",
+    "Designation": "Assistant Professor",
+    "Email": "sonia@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-17",
+    "Name": "Nazia Alam (On Study Leave)",
+    "Designation": "Lecturer",
+    "Email": "nazia.alam@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-18",
+    "Name": "Fatema Siddika (On Study Leave)",
+    "Designation": "Lecturer",
+    "Email": "fatema@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-19",
+    "Name": "Tanvir Ahammad",
+    "Designation": "Lecturer",
+    "Email": "tanvir@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-20",
+    "Name": "Linta Islam (Study Leave)",
+    "Designation": "Lecturer",
+    "Email": "linta@cse.jnu.ac.bd"
+  },
+  {
+    "ID": "CSEF-21",
+    "Name": "Arnisha Akhter",
+    "Designation": "Lecturer",
+    "Email": "arnisha@cse.jnu.ac.bd"
+  }
+]
