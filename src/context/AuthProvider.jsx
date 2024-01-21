@@ -1,5 +1,10 @@
 import { createContext, useEffect, useState } from "react";
-import { FacebookAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import {
+  FacebookAuthProvider,
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+} from "firebase/auth";
 import { app } from "../firebase/firebase.config";
 export const authContext = createContext(null);
 
@@ -20,12 +25,18 @@ const AuthProvider = ({ children }) => {
   const facebookLogin = () => {
     return signInWithPopup(auth, facebookProvider);
   };
+  const googleProvider = new GoogleAuthProvider();
+
+  const googleLogin = () => {
+    return signInWithPopup(auth, googleProvider);
+  };
   const authInfo = {
     name: "abir",
     studentData,
     loading,
     setLoading,
     facebookLogin,
+    googleLogin,
   };
   return (
     <authContext.Provider value={authInfo}>{children}</authContext.Provider>
