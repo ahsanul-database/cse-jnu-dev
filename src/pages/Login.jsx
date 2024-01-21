@@ -1,10 +1,16 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { authContext } from "../context/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [user, setUser] = useState(null);
-  const { facebookLogin, googleLogin } = useContext(authContext);
+  const { user, setUser, allStudentsMail, facebookLogin, googleLogin } =
+    useContext(authContext);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from.pathname || "/";
+
   const handleLogin = () => {
     facebookLogin()
       .then((result) => {
@@ -17,7 +23,15 @@ const Login = () => {
   const handleGoogle = () => {
     googleLogin()
       .then((result) => {
-        setUser(result.user);
+        const currentStudent = allStudentsMail.find(
+          (std) => std === result.user.email
+        );
+        if (currentStudent) {
+          setUser(result.user);
+          navigate(from, { replace: true });
+        } else {
+          alert("You are not a student of CSE13");
+        }
       })
       .catch((error) => {
         console.log(error);

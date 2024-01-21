@@ -20,6 +20,7 @@ import QuestionBank from "./pages/QuestionBank.jsx";
 import TutorialNew from "./pages/TutorialNew.jsx";
 import FeaturesLog from "./pages/FeaturesLog.jsx";
 import Login from "./pages/Login.jsx";
+import PrivateRoute from "./pages/PrivateRoute.jsx";
 
 const route = createBrowserRouter([
   {
@@ -44,7 +45,11 @@ const route = createBrowserRouter([
           },
           {
             path: "notes",
-            element: <Notes />,
+            element: (
+              <PrivateRoute>
+                <Notes />
+              </PrivateRoute>
+            ),
             loader: () =>
               fetch(
                 "https://raw.githubusercontent.com/ahsanul-database/fakeDB/main/notes13.json"
@@ -52,7 +57,11 @@ const route = createBrowserRouter([
           },
           {
             path: "tutorialX",
-            element: <Tutorial />,
+            element: (
+              <PrivateRoute>
+                <Tutorial />
+              </PrivateRoute>
+            ),
             loader: () =>
               fetch(
                 "https://raw.githubusercontent.com/ahsanul-database/fakeDB/main/tutorials.json"
@@ -60,7 +69,11 @@ const route = createBrowserRouter([
           },
           {
             path: "tutorial",
-            element: <TutorialX />,
+            element: (
+              <PrivateRoute>
+                <TutorialX />
+              </PrivateRoute>
+            ),
             loader: () =>
               fetch(
                 "https://raw.githubusercontent.com/ahsanul-database/fakeDB/main/tutorials.json"
@@ -76,7 +89,11 @@ const route = createBrowserRouter([
           },
           {
             path: "questionbank",
-            element: <QuestionBank />,
+            element: (
+              <PrivateRoute>
+                <QuestionBank />
+              </PrivateRoute>
+            ),
             loader: () =>
               fetch(
                 "https://raw.githubusercontent.com/ahsanul-database/cse-jnu-serverr/main/QtbBank.json"
@@ -96,7 +113,11 @@ const route = createBrowserRouter([
           },
           {
             path: "idCard",
-            element: <Students />,
+            element: (
+              <PrivateRoute>
+                <Students />
+              </PrivateRoute>
+            ),
             loader: () =>
               fetch("https://cse-jnu-server.vercel.app/allDataofCSE13"),
           },

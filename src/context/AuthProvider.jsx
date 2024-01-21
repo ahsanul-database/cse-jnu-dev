@@ -11,9 +11,10 @@ export const authContext = createContext(null);
 const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   // all state---------------------------------
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null);
   const [studentData, setStudentData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
+  const allStudentsMail = studentData.map((student) => student.email);
   useEffect(() => {
     fetch("https://cse-jnu-server.vercel.app/allDataofCSE13")
       .then((res) => res.json())
@@ -37,6 +38,9 @@ const AuthProvider = ({ children }) => {
     setLoading,
     facebookLogin,
     googleLogin,
+    user,
+    setUser,
+    allStudentsMail,
   };
   return (
     <authContext.Provider value={authInfo}>{children}</authContext.Provider>
