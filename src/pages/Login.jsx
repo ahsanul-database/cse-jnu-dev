@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { authContext } from "../context/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { user, setUser, allStudentsMail, facebookLogin, googleLogin } =
@@ -27,10 +28,12 @@ const Login = () => {
           (std) => std === result.user.email
         );
         if (currentStudent) {
+          toast(`Welcome Back ${result.user.displayName}`);
           setUser(result.user);
           navigate(from, { replace: true });
         } else {
-          alert("You are not a student of CSE13");
+          // alert("You are not a student of CSE13");
+          toast.error("You are not a student of CSE13");
         }
       })
       .catch((error) => {

@@ -21,7 +21,8 @@ import TutorialNew from "./pages/TutorialNew.jsx";
 import FeaturesLog from "./pages/FeaturesLog.jsx";
 import Login from "./pages/Login.jsx";
 import PrivateRoute from "./pages/PrivateRoute.jsx";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const route = createBrowserRouter([
   {
     path: "/",
@@ -158,6 +159,7 @@ const route = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
+      <ToastContainer />
       <RouterProvider router={route}></RouterProvider>
     </AuthProvider>
   </React.StrictMode>
