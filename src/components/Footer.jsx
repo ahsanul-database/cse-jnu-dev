@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="text-xl lg:text-lg footer justify-center lg:justify-around mt-5 py-10 bg-blue-100  text-center">
+    <footer className="text-xl lg:text-lg footer justify-center lg:justify-around mt-5 py-10 bg-base-200   text-center">
       <nav>
         <header className="footer-title">Quick Links</header>
         <Link className="link link-hover">Notice</Link>

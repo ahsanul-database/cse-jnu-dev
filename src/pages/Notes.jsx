@@ -2,11 +2,23 @@ import { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { useLoaderData, useNavigation } from "react-router-dom";
 import LoadingPage from "./LoadingPage";
+import Banner from "../components/Banner";
 
 const Notes = () => {
   const loading = useNavigation();
-  const allnotes = JSON.parse(useLoaderData());
+  // const allnotes = JSON.parse(useLoaderData());
+  const allnotes = useLoaderData();
   const [filterType, setFilterType] = useState("topic");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [notePerPage, setnotePerPage] = useState(20);
+  const indexOfLastNotes = currentPage * notePerPage;
+  const indexOfFirstNotes = indexOfLastNotes - notePerPage;
+  const pageCount = Math.ceil(allnotes.length / notePerPage);
+  const [currentNotes, setCurrentItems] = useState(
+    allnotes.slice(indexOfFirstNotes, indexOfLastNotes)
+  );
+  // const currentNotes = allnotes.slice(indexOfFirstNotes, indexOfLastNotes);
+  const numbers = [...Array(pageCount + 1).keys()].slice(1);
 
   const temp = [...allnotes];
   const [notes, setNotes] = useState(temp?.sort(() => Math.random() - 0.5));
@@ -26,18 +38,29 @@ const Notes = () => {
     const searchResult = newNotes.filter((std) =>
       std[filterType].toLowerCase().includes(value.toLowerCase())
     );
-    setNotes(searchResult);
+    // setNotes(searchResult);
+    setCurrentItems(searchResult);
   };
+  // pagination function are here
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+  const nextPage = () => {
+    if (currentPage < pageCount) setCurrentPage(currentPage + 1);
+  };
+  const paginate = (number) => {
+    setCurrentPage(number);
+  };
+
+  if (currentNotes.length === 0) {
+    return <LoadingPage></LoadingPage>;
+  }
   return (
-    <div className="py-10 lg:px-10 mx-auto px-3">
-      <div className="flex items-center gap-5 py-6 justify-center">
-        <hr className="border-2 border-black w-[25%] " />
-        <h1 className="text-xl lg:text-4xl text-center font-bold">
-          Notes & Slides{" "}
-        </h1>
-        <hr className="border-2 border-black w-[25%] " />
-      </div>
-      <div className="flex flex-col m-0 justify-center items-center">
+    <div className="  mx-auto ">
+      <Banner>Notes & Slides </Banner>
+      <div className="py-10 lg:px-10 flex px-3 flex-col m-0 justify-center items-center">
         <div className="join w-fit">
           <div>
             <div>
@@ -79,10 +102,10 @@ const Notes = () => {
                 </tr>
               </thead>
               <tbody>
-                {notes.map((note, index) => (
+                {currentNotes.map((note, index) => (
                   <tr className="text-xs lg:text-lg" key={index}>
                     <td className=" lg:text-lg  border-2 border-gray-200">
-                      {index + 1}
+                      {index + indexOfFirstNotes + 1}
                     </td>
                     <td className=" lg:text-lg border-2 border-gray-200">
                       {note.author}
@@ -115,6 +138,32 @@ const Notes = () => {
               </h1>
             </>
           )}
+        </div>
+        {/* -------------------- pagination part ---------------- */}
+        <div className="join gap-1 flex justify-center">
+          <button
+            onClick={prevPage}
+            className="join-item bg-blue-100 hover:bg-blue-200 btn"
+          >
+            «
+          </button>
+          {numbers.map((number) => (
+            <button
+              onClick={() => paginate(number)}
+              key={number}
+              className={`bg-blue-100 hover:bg-blue-200 join-item btn ${
+                number === currentPage ? "active" : ""
+              }`}
+            >
+              {number}
+            </button>
+          ))}
+          <button
+            onClick={nextPage}
+            className="bg-blue-100 hover:bg-blue-200 join-item btn"
+          >
+            »
+          </button>
         </div>
       </div>
     </div>

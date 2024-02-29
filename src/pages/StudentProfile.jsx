@@ -6,21 +6,35 @@ import { useNavigation } from "react-router-dom";
 import LoadingPage from "./LoadingPage";
 
 const StudentProfile = () => {
-  const { studentData } = useContext(authContext);
+  const { studentData, loading } = useContext(authContext);
   const [filterType, setFilterType] = useState("name");
-  const loading = useNavigation();
-  const temp = [...studentData];
-  const [students, setStudents] = useState(
-    temp?.sort(() => Math.random() - 0.5)
+  // usestate hooks for pagination ----------------
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [ItemPerPage, setItemPerPage] = useState(12);
+  const indexOfLastItem = currentPage * ItemPerPage;
+  const indexOfFirstItem = indexOfLastItem - ItemPerPage;
+  // const currentItems = studentData.slice(indexOfFirstItem, indexOfLastItem);
+  const [currentItems, setCurrentItems] = useState(
+    studentData.slice(indexOfFirstItem, indexOfLastItem)
   );
-  if (loading.state === "loading") {
-    return <LoadingPage />;
-  }
+  const pageCount = Math.ceil(studentData.length / ItemPerPage);
+  const numbers = [...Array(pageCount + 1).keys()].slice(1);
+
+  const temp = [...studentData];
+  const [students, setStudents] = useState([...studentData]);
+  // if (loading.state === "loading") {
+  //   return <LoadingPage />;
+  // }
+
   // to show in orders section code ----------------------
+
   const ascOrder = (data) => {
     data.sort((a, b) => {
-      const nameA = a.name.toLowerCase(); // ignore upper and lowercase
-      const nameB = b.name.toLowerCase(); // ignore upper and lowercase
+      // const nameA = a.nickname.toLowerCase(); // ignore upper and lowercase
+      // const nameB = b.nickname.toLowerCase(); // ignore upper and lowercase
+      const nameA = a.nickname; // ignore upper and lowercase
+      const nameB = b.nickname; // ignore upper and lowercase
       if (nameA < nameB) {
         return -1;
       }
@@ -36,15 +50,18 @@ const StudentProfile = () => {
     const value = e.target.value;
     if (value === "ran") {
       const newStudents = [...studentData];
-      setStudents(newStudents.sort(() => Math.random() - 0.5));
+      // setStudents(newStudents.sort(() => Math.random() - 0.5));
+      setCurrentItems(newStudents.sort(() => Math.random() - 0.5));
     } else if (value === "asc") {
       const newStudents = [...studentData];
       ascOrder(newStudents);
-      setStudents(newStudents);
+      // setStudents(newStudents);
+      setCurrentItems(newStudents);
     } else if (value === "dsc") {
       const newStudents = [...studentData];
       ascOrder(newStudents);
-      setStudents(newStudents.reverse());
+      // setStudents(newStudents.reverse());
+      setCurrentItems(newStudents.reverse());
     }
   };
 
@@ -62,8 +79,22 @@ const StudentProfile = () => {
     const searchResult = newStudents.filter((std) =>
       std[filterType].toLowerCase().includes(value.toLowerCase())
     );
-    setStudents(searchResult);
+    // setStudents(searchResult);
+    setCurrentItems(searchResult);
   };
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+  const nextPage = () => {
+    if (currentPage < pageCount) setCurrentPage(currentPage + 1);
+  };
+  const paginate = (number) => {
+    setCurrentPage(number);
+  };
+
+  if (loading) return <LoadingPage />;
   return (
     <div>
       <h1 className="py-10 text-4xl font-bold text-center">
@@ -131,12 +162,39 @@ const StudentProfile = () => {
           console.log(std);
         })} */}
         {students.length > 0 ? (
-          students.map((std) => <Student key={std.id} item={std} />)
+          currentItems.map((std) => <Student key={std.id} item={std} />)
         ) : (
           <h1 className="text-2xl py-20 capitalize font-bold text-center">
-            No Data Matched With This {filterType === "blood" ? "blood Group" : filterType}{" "}
+            No Data Matched With This{" "}
+            {filterType === "blood" ? "blood Group" : filterType}{" "}
           </h1>
         )}
+      </div>
+      {/* -------------------- pagination part ---------------- */}
+      <div className="join gap-1 flex justify-center py-10">
+        <button
+          onClick={prevPage}
+          className="join-item bg-blue-100 hover:bg-blue-200 btn"
+        >
+          «
+        </button>
+        {numbers.map((number) => (
+          <button
+            onClick={() => paginate(number)}
+            key={number}
+            className={`bg-blue-100 hover:bg-blue-200 join-item btn ${
+              number === currentPage ? "active" : ""
+            }`}
+          >
+            {number}
+          </button>
+        ))}
+        <button
+          onClick={nextPage}
+          className="bg-blue-100 hover:bg-blue-200 join-item btn"
+        >
+          »
+        </button>
       </div>
     </div>
   );

@@ -51,51 +51,44 @@ const NoticeBoard = () => {
   return (
     <div>
       <h1 className="text-4xl font-bold text-center myText">
-        Notice Board - Upcoming Events
+        Notice Board - All Upcoming and Recent Notices
       </h1>
       <div className="overflow-x-auto mx-1 py-5">
         {temp.length > 0 ? (
           <table className="table border-2 border-teal-200 ">
-            <thead className="capitalize bg-teal-100">
-              <th className="border-r-2 border-teal-200">Type</th>
-              <th className="border-r-2 border-teal-200">course</th>
-              <th className="border-r-2 border-teal-200">Room No.</th>
-              <th className="border-r-2 border-teal-200">course teacher</th>
-              <th className="border-r-2 border-teal-200">time</th>
-              <th>left time</th>
+            <thead className="capitalize bg-teal-200 text-black">
+              <tr>
+                <th className="border-r-2 border-teal-200">Type</th>
+                <th className="border-r-2 border-teal-200">course</th>
+                <th className="border-r-2 border-teal-200">Room No.</th>
+                <th className="border-r-2 border-teal-200">course teacher</th>
+                <th className="border-r-2 border-teal-200">time</th>
+                {/* <th className="">left time</th> */}
+              </tr>
             </thead>
             <tbody>
-              {temp.map(
-                (item, idx) =>
-                  ((item.leftTime > 0) && (item.leftTime <= 360)) && (
-                    <tr
-                      className={`capitalize ${idx % 2 == 0 && "bg-blue-100"}`}
-                      key={idx}
-                    >
-                      <td className="border-r-2 border-teal-200">
-                        {item.type}
-                      </td>
-                      <td className="border-r-2 border-teal-200">
-                        {item.course}
-                      </td>
-                      <td className="border-r-2 border-teal-200">
-                        {item.room}
-                      </td>
-                      <td className="border-r-2 border-teal-200">
-                        {item.courseTeacher}
-                      </td>
-                      <td className="border-r-2 border-teal-200">
-                        {item.date} {item.time}
-                      </td>
-                      <td>{timeHandle(item.leftTime)}</td>
-                    </tr>
-                  )
-              )}
+              {temp.map((item, idx) => (
+                <tr
+                  className={`capitalize ${idx % 2 == 0 && "bg-base-300"}`}
+                  key={idx}
+                >
+                  <td className="border-r-2 border-teal-200">{item.type}</td>
+                  <td className="border-r-2 border-teal-200">{item.course}</td>
+                  <td className="border-r-2 border-teal-200">{item.room}</td>
+                  <td className="border-r-2 border-teal-200">
+                    {item.courseTeacher}
+                  </td>
+                  <td className="border-r-2 border-teal-200">
+                    {item.date} {item.time}
+                  </td>
+                  {/* <td>{timeHandle(item.leftTime)}</td> */}
+                </tr>
+              ))}
             </tbody>
           </table>
         ) : (
           <>
-          <h2 className="text-center">No Notice Available now!</h2>
+            <h2 className="text-center">No Notice Available now!</h2>
           </>
         )}
       </div>

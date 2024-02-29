@@ -1,6 +1,7 @@
 import { FaEye } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
+import Banner from "../components/Banner";
 
 const TutorialX = () => {
   const [videoLink, setVideoLink] = useState(null);
@@ -27,18 +28,14 @@ const TutorialX = () => {
       b == 1 ? "1st" : "2nd"
     } Semester`;
   };
-  const handleShow = (url, name,topic) => {
+  const handleShow = (url, name, topic) => {
     setVideoLink(url);
     setName(name);
     setTopic(topic);
   };
   return (
     <div className="">
-      <div className="flex items-center gap-5 py-6 justify-center">
-        <hr className="border-2 border-black w-[25%] " />
-        <h1 className="text-4xl text-center font-bold">Tutorials</h1>
-        <hr className="border-2 border-black w-[25%] " />
-      </div>
+      <Banner>Tutorials</Banner>
       <div className="py-10 flex justify-center items-center">
         <form onChange={searchData} className="flex gap-3 items-center">
           <input
@@ -77,8 +74,8 @@ const TutorialX = () => {
       </div>
       <div className=" overflow-x-auto mx-5  lg:mx-20">
         {tutorials.length > 0 ? (
-          <table className="table border-2 shadow-2xl lg:text-xl rounded ">
-            <thead className="bg-teal-100 lg:text-xl text-center">
+          <table className="table border-2  shadow-2xl lg:text-xl rounded ">
+            <thead className="bg-teal-300 text-base-100 lg:text-xl text-center">
               <th className="border-r-2">Serial</th>
               <th className="border-r-2">Semester</th>
               <th className="border-r-2">Course Name</th>
@@ -88,7 +85,7 @@ const TutorialX = () => {
             <tbody>
               {tutorials.map((item, idx) => (
                 <tr
-                  className={`${idx % 2 == 0 && "bg-blue-100"}`}
+                  className={`${idx % 2 == 0 && "bg-base-300"}`}
                   key={item.id}
                 >
                   <td className="border-r-2">{idx + 1} </td>
@@ -102,7 +99,7 @@ const TutorialX = () => {
                     <a href="#myTutorial">
                       <FaEye
                         onClick={() =>
-                          handleShow(item.classURL, item.CourseName,item.topic)
+                          handleShow(item.classURL, item.CourseName, item.topic)
                         }
                         className="text-2xl lg:text-5xl"
                       />

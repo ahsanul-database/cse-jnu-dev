@@ -6,24 +6,36 @@ import "../index.css";
 import NoticeBoard from "./NoticeBoard";
 import { useNavigation } from "react-router-dom";
 import LoadingPage from "../pages/LoadingPage";
+import { ChatBubbleLeftRightIcon } from "@heroicons/react/24/solid";
+import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
+import Message from "./Message";
+import NoticeBox from "./NoticeBox";
 
 const Home = () => {
   const loading = useNavigation();
+
   if (loading === "loading") {
     return <LoadingPage />;
   }
+
   return (
     <div className="lg:px-24 px-5 py-10">
-      <div>
+      <div className="">
         <img
           className="w-full h-full shadow-2xl rounded-lg"
           src="https://i.ibb.co/R4dHwyS/jnu-cse-13.jpg"
           alt=""
         />
       </div>
-      <div id="myNotice" className="my-10">
+      {/* <div id="myNotice" className="my-10">
         <NoticeBoard />
+      </div> */}
+      <div className="my-10">
+        <NoticeBox />
       </div>
+      {/* message section  */}
+      <Message />
       {/* 1st section---------------  */}
       <div className="flex flex-col-reverse pt-5 lg:flex-row  gap-3 items-center ">
         <div className="lg:w-[30%] relative">

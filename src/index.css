@@ -22,14 +22,16 @@
   @apply pr-2 text-cyan-500 text-3xl  border-teal-600 border-r-2;
 }
 
-.myText{
-  @apply animate-pulse bg-gradient-to-r from-teal-600 via-blue-300 to-rose-600 bg-clip-text text-transparent font-black font-mono transition duration-1000
-
+.myText {
+  @apply animate-pulse bg-gradient-to-r from-teal-600 via-blue-300 to-rose-600 bg-clip-text text-transparent font-black font-mono transition duration-1000;
 }
 .borderAnimation {
   @apply border-2 border-teal-600 border-opacity-0 hover:border-opacity-100 duration-500;
 }
 
+.loginimg {
+  border-radius: 0% 100% 100% 0% / 30% 0% 100% 70%;
+}
 
 .myTextAnimation {
   background: #17cf6d;

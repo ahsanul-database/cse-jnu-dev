@@ -23,6 +23,13 @@ import Login from "./pages/Login.jsx";
 import PrivateRoute from "./pages/PrivateRoute.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AdminPanel from "./pages/AdminPanel.jsx";
+import LoadingPage from "./pages/LoadingPage.jsx";
+import UserProfile from "./pages/UserProfile.jsx";
+import UpdateInfo from "./pages/UpdateInfo/UpdateInfo.jsx";
+import UpdateInfo2 from "./pages/UpdateInfo/UpdateInfo2.jsx";
+import AddNotes from "./pages/AddNote/AddNotes.jsx";
+import Notices from "./pages/Notices.jsx";
 const route = createBrowserRouter([
   {
     path: "/",
@@ -53,7 +60,7 @@ const route = createBrowserRouter([
             ),
             loader: () =>
               fetch(
-                "https://raw.githubusercontent.com/ahsanul-database/fakeDB/main/notes13.json"
+                "https://jnu-server-production.up.railway.app/allNotesbybatch13"
               ),
           },
           {
@@ -110,17 +117,17 @@ const route = createBrowserRouter([
             path: "profileCard",
             element: <StudentProfile />,
             loader: () =>
-              fetch("https://cse-jnu-server.vercel.app/allDataofCSE13"),
+              fetch(
+                "https://jnu-server-production.up.railway.app/allDataofCSE13"
+              ),
           },
           {
             path: "idCard",
-            element: (
-              <PrivateRoute>
-                <Students />
-              </PrivateRoute>
-            ),
+            element: <Students />,
             loader: () =>
-              fetch("https://cse-jnu-server.vercel.app/allDataofCSE13"),
+              fetch(
+                "https://jnu-server-production.up.railway.app/allDataofCSE13"
+              ),
           },
         ],
       },
@@ -129,12 +136,36 @@ const route = createBrowserRouter([
         element: <Portfolio />,
         loader: ({ params }) =>
           fetch(
-            `https://cse-jnu-server.vercel.app/allDataofCSE13/${params.id}`
+            `https://jnu-server-production.up.railway.app/allDataofCSE13/${params.id}`
           ),
       },
       {
         path: "faculty",
         element: <Faculty />,
+      },
+      {
+        path: "details/profile",
+        element: (
+          <PrivateRoute>
+            <UserProfile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/allnotices",
+        element: <Notices />,
+      },
+      {
+        path: "AddNote",
+        element: <AddNotes />,
+      },
+      {
+        path: "updateinfo",
+        element: <UpdateInfo2 />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "*",
@@ -143,12 +174,17 @@ const route = createBrowserRouter([
     ],
   },
   {
+    path: "/loadingpage",
+    element: <LoadingPage />,
+  },
+  {
     path: "/features",
     element: <FeaturesLog />,
   },
+
   {
-    path: "/login",
-    element: <Login />,
+    path: "/adminpanel",
+    element: <AdminPanel />,
   },
   {
     path: "*",

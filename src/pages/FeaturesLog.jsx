@@ -1,23 +1,10 @@
-import anim1 from "../assets/loaderrr.json";
-import anim2 from "../assets/dot-ani.json";
-import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
-
+import Banner from "../components/Banner";
 const FeaturesLog = () => {
   return (
     <div>
       {/* header  */}
-      <div className="relative flex items-center justify-center bg-slate-200 h-60  px-10">
-        <h1 className="text-3xl lg:text-5xl font-bold text-center py-10">
-          Features Log
-        </h1>
-        <div className="absolute bottom-0 left-0 lg:px-20">
-          <Lottie animationData={anim1} className="h-20 lg:h-48"></Lottie>
-        </div>
-        <div className="absolute translate-x-1/2 opacity-40">
-          <Lottie animationData={anim2} className="h-36 lg:h-60"></Lottie>
-        </div>
-      </div>
+      <Banner>Feature Log</Banner>
       {/* contents  */}
       <section className="py-10 lg:px-20 px-5">
         <div className="space-y-5">
@@ -44,14 +31,20 @@ const FeaturesLog = () => {
                   Faculty option displays the list of faculty members of the
                   department.
                 </li>
-                <li>
+                {/* <li>
                   Message button displays a random message to everyone.When an
                   user clicked the button,it will show you a different message.
+                </li> */}
+                <li>
+                  Login Button is added in the header. If you click the button
+                  it will take you to the login page.If you are already logged
+                  in then it will display your image.
                 </li>
               </ul>
             </li>
             <li>
-                <b>Footer: </b> There have some quick links and social media links of developers in the footer.
+              <b>Footer: </b> There have some quick links and social media links
+              of developers in the footer.
             </li>
           </ul>
           <h2 className="text-2xl font-bold">Home Page</h2>
@@ -62,6 +55,11 @@ const FeaturesLog = () => {
               beyond this 15-day period, it will not be shown. An event contains
               the information of event type (like Exam,Class,Lab etc.),Course
               Name,Room No,Course teacher,time and how much time left from now.{" "}
+            </li>
+            <li>
+              <b>Message:</b> It displays a random message to everyone. When an
+              user clicked the button(both Diamond icon or double arrow), it
+              will show you a different message.
             </li>
           </ul>
           <h2 className="text-2xl font-bold py-3">Academic</h2>
@@ -158,18 +156,85 @@ const FeaturesLog = () => {
                   it will shows in the search placeholder.
                 </li>
                 <li>
-                    The filter will be onchange event so no submit button added.
+                  The filter will be onchange event so no submit button added.
                 </li>
                 <li>
-                    Each Student card have 3 sections. First section shows about information. Second section shows academic information. Third section shows contact and personal information. Every section have student image. In third section there have a button to learn more. If you click the button it will take you to the student profile page.
+                  Each Student card have 3 sections. First section shows about
+                  information. Second section shows academic information. Third
+                  section shows contact and personal information. Every section
+                  have student image. In third section there have a button to
+                  learn more. If you click the button it will take you to the
+                  student profile page.
                 </li>
               </ul>
+            </li>
+          </ul>
+          <h2 className="text-2xl font-bold py-3">Faculty</h2>
+          <ul className="list-disc pl-5 space-y-4">
+            <li>
+              <b>Faculty Members:</b> It displays the list of faculty members of
+              the department. It contains the information of Faculty
+              Name,Designation,Email and Phone number.
+            </li>
+          </ul>
+          <h2 className="text-2xl font-bold py-3">Student Information</h2>
+          <p>
+            If a student log in with his provided credentials then he/she can
+            access this tab. Otherwise it shows a alert
+          </p>
+          <p>
+            A sign-in user can see his photo on right side of navbar. If he
+            enter his mouse pointer on this,it will show his Name. If he click
+            on that picture,it will show you a dropdown where includes 3
+            options:
+            <ul className="list list-disc pl-5">
+              <li>Profile - which leads to the Profile Page.</li>
+              <li>
+                Update Information - which leads to Update Information Page
+              </li>
+              <li>Logout - which logs outs the user from the system.</li>
+            </ul>
+          </p>
+          <ul className="py-5 space-y-5">
+            <li>
+              <b>Profile:</b> This is the detailed information of the logged in
+              user. In this page, the user can see his/her information in 3
+              sections.
+              <ul className="list-disc pl-5">
+                <li>
+                  <b>Personal Information:</b> This section contains the
+                  personal information of the user. By clicking the edit button
+                  in about section, user can update his/her personal
+                  information.
+                </li>
+                <li>
+                  <b>Academic Information:</b> This section contains the
+                  academic information of the user. li
+                </li>
+                <li>
+                  <b>Miscellaneous:</b> This section contains the contact
+                  miscellaneous of the user.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <b>Update Information:</b>This page is used to update the
+              information of the logged in user. The fields are same as in
+              Personal Information Section. After updating all the required
+              fields, the user must have to click the submit button to save the
+              changes.
+            </li>
+            <li>
+              <b>Logout:</b> This button is used to log out the user from the
+              system.
             </li>
           </ul>
         </div>
       </section>
       <Link to="/">
-        <p className="py-2 px-5 bg-teal-200 w-fit mx-auto my-5">Back to Home</p>
+        <p className="py-2 px-5 bg-teal-300 text-base-100 w-fit mx-auto my-5">
+          Back to Home
+        </p>
       </Link>
     </div>
   );

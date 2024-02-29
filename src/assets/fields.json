@@ -1,0 +1,189 @@
+{
+  "Input": [
+    {
+      "label": "About Yourself(No word Limit)",
+      "type": "textarea",
+      "name": "description"
+    },
+    {
+      "label": "Your Full Name",
+      "type": "text",
+      "name": "name"
+    },
+    {
+      "label": "Nickname",
+      "type": "text",
+      "name": "nickname"
+    },
+    {
+      "label": "City",
+      "type": "text",
+      "name": "city"
+    },
+    {
+      "label": "Email",
+      "type": "email",
+      "name": "email"
+    },
+    {
+      "label": "Birthdate(DD/MM/YYYY)",
+      "type": "text",
+      "name": "birthdate"
+    },
+    {
+      "label": "Photo URL",
+      "type": "text",
+      "name": "photo"
+    },
+    {
+      "label": "Skills",
+      "type": "text",
+      "name": "skills"
+    },
+    {
+      "label": "Address",
+      "type": "text",
+      "name": "address"
+    },
+    {
+      "label": "Height(cm)",
+      "type": "number",
+      "name": "height"
+    },
+    {
+      "label": "Weight(Kg)",
+      "type": "number",
+      "name": "weight"
+    },
+    {
+      "label": "Facebook(Only Username)",
+      "type": "text",
+      "name": "facebook"
+    },
+    {
+      "label": "Phone Number",
+      "type": "text",
+      "name": "phone_number"
+    },
+    {
+      "label": "Instagram (Username only) ",
+      "type": "text",
+      "name": "instagram"
+    },
+    {
+      "label": "LinkedIn (Username only)",
+      "type": "text",
+      "name": "linkedin"
+    },
+    {
+      "label": "GitHub (Username only)",
+      "type": "text",
+      "name": "github"
+    },
+    {
+      "label": "YouTube (Username only)",
+      "type": "text",
+      "name": "youtube"
+    },
+    {
+      "label": "Website",
+      "type": "url",
+      "name": "website"
+    },
+    {
+      "label": "Codeforces (Username only)",
+      "type": "text",
+      "name": "codeforces"
+    },
+    {
+      "label": "Toph (username only)",
+      "type": "text",
+      "name": "toph"
+    },
+    {
+      "label": "Codechef (Username only)",
+      "type": "text",
+      "name": "codechef"
+    },
+    {
+      "label": "LeetCode (Username only)",
+      "type": "text",
+      "name": "leetcode"
+    },
+    {
+      "label": "HackerRank (Username only)",
+      "type": "text",
+      "name": "hackerrank"
+    },
+    {
+      "label": "WhatsApp Number",
+      "type": "tel",
+      "name": "whatsapp"
+    },
+    {
+      "label": "Student ID",
+      "type": "text",
+      "name": "id"
+    },
+    {
+      "label": "Hobbies",
+      "type": "text",
+      "name": "hobbies"
+    },
+    {
+      "label": "College Passing Year",
+      "type": "number",
+      "name": "clgPYear"
+    },
+    {
+      "label": "College Name",
+      "type": "text",
+      "name": "clgName"
+    },
+    {
+      "label": "School Passing Year",
+      "type": "number",
+      "name": "schoolPYear"
+    },
+    {
+      "label": "School Name",
+      "type": "text",
+      "name": "schoolName"
+    }
+  ],
+  "Select": [
+    {
+      "label": "Religion",
+      "type": "select",
+      "name": "religion",
+      "options": ["Hindu", "Muslim", "Christian", "Buddhist", "Other"]
+    },
+    {
+      "label": "Marital Status",
+      "type": "select",
+      "name": "maritalStatus",
+      "options": ["Single", "Married", "Divorced", "Widowed"]
+    },
+    {
+      "label": "Blood Group",
+      "type": "select",
+      "name": "blood",
+      "options": {
+        "A+": "A+",
+        "A-": "A-",
+        "B+": "B+",
+        "B-": "B-",
+        "AB+": "AB+",
+        "AB-": "AB-",
+        "O+": "O+",
+        "O-": "O-"
+      }
+    },
+    {
+      "label": "Gender",
+      "type": "select",
+      "name": "gender",
+      "options": { "M": "Male", "F": "Female", "O": "Other" }
+    }
+  ]
+}

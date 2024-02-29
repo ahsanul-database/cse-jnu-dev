@@ -8,6 +8,13 @@ import "react-vertical-timeline-component/style.min.css";
 const EduTimeline = ({ academics }) => {
   const { clgPYear, clgName, schoolName, schoolPYear, educationalBackground } =
     academics;
+  console.log(
+    clgPYear,
+    clgName,
+    schoolName,
+    schoolPYear,
+    educationalBackground
+  );
   return (
     <div>
       <VerticalTimeline layout="1-column-left" lineColor="black">
@@ -31,7 +38,7 @@ const EduTimeline = ({ academics }) => {
           contentStyle={{ background: "teal", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  teal" }}
           date={`
-            ${clgPYear} - ${schoolPYear}`}
+            ${parseInt(clgPYear)} - ${parseInt(schoolPYear)}`}
           iconStyle={{ background: "cyan", color: "black" }}
           icon={<FaRegCheckCircle className=" " />}
         >

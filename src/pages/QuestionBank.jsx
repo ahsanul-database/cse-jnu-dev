@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaEye } from "react-icons/fa6";
 import { useLoaderData, useNavigation } from "react-router-dom";
 import LoadingPage from "./LoadingPage";
+import Banner from "../components/Banner";
 
 const QuestionBank = () => {
   const QBData = JSON.parse(useLoaderData());
@@ -37,14 +38,8 @@ const QuestionBank = () => {
   };
   return (
     <div>
-      <div className="flex items-center gap-5 py-10 justify-center">
-        <hr className="border-2 border-black w-[25%] " />
-        <h1 className="text-xl lg:text-4xl text-center font-bold">
-          Question Bank{" "}
-        </h1>
-        <hr className="border-2 border-black w-[25%] " />
-      </div>
-      <div className="flex flex-col m-0 justify-center items-center">
+      <Banner>Question Bank</Banner>
+      <div className="py-10 flex flex-col m-0 justify-center items-center">
         <div className="join w-fit">
           <div>
             <div>
@@ -68,40 +63,43 @@ const QuestionBank = () => {
               <button className="py-2 px-4 bg-blue-200 hover:bg-teal-300 join-item">Search</button>
             </div> */}
         </div>
-        <div id="notes" className=" overflow-x-auto my-5 px-5 lg:px-20 w-full mx-auto">
+        <div
+          id="notes"
+          className=" overflow-x-auto my-5 px-5 lg:px-20 w-full mx-auto"
+        >
           {QB.length > 0 ? (
-            <table className="table border-2 border-black ">
+            <table className="table border-2 border-teal-300 ">
               <thead>
-                <tr className="font-bold text-md bg-teal-200 lg:text-lg">
-                  <th className=" border-2 border-gray-200">SL</th>
-                  <th className=" border-2 border-gray-200">Semester</th>
-                  <th className=" border-2 border-gray-200">Batch</th>
-                  <th className=" border-2 border-gray-200">Course Name</th>
-                  <th className=" border-2 border-gray-200">Question</th>
-                  <th className=" border-2 border-gray-200">Solution</th>
+                <tr className="font-bold text-md text-base-100  bg-teal-300 lg:text-lg">
+                  <th className=" border-2 border-teal-300">SL</th>
+                  <th className=" border-2 border-teal-300">Semester</th>
+                  <th className=" border-2 border-teal-300">Batch</th>
+                  <th className=" border-2 border-teal-300">Course Name</th>
+                  <th className=" border-2 border-teal-300">Question</th>
+                  <th className=" border-2 border-teal-300">Solution</th>
                 </tr>
               </thead>
               <tbody>
                 {QB.map((note, index) => (
                   <tr
                     className={`text-xs lg:text-lg ${
-                      index % 2 == 0 && "bg-blue-100"
+                      index % 2 == 0 && "bg-base-300"
                     }`}
                     key={index}
                   >
-                    <td className=" lg:text-lg  border-2 border-gray-200">
+                    <td className=" lg:text-lg  border-2 border-teal-300">
                       {index + 1}
                     </td>
-                    <td className=" lg:text-lg  ordinal border-2 border-gray-200">
+                    <td className=" lg:text-lg  ordinal border-2 border-teal-300">
                       {handleSemester(note.semester)}
                     </td>
-                    <td className=" lg:text-lg ordinal border-2 border-gray-200">
+                    <td className=" lg:text-lg ordinal border-2 border-teal-300">
                       {note.batch} Batch
                     </td>
-                    <td className=" lg:text-lg border-2 border-gray-200">
+                    <td className=" lg:text-lg border-2 border-teal-300">
                       {note.course}
                     </td>
-                    <td className=" lg:text-lg border-2 border-gray-200">
+                    <td className=" lg:text-lg border-2 border-teal-300">
                       <a
                         href={note.Qurl}
                         target="_blank"
@@ -111,7 +109,7 @@ const QuestionBank = () => {
                         <FaEye />
                       </a>
                     </td>
-                    <td className=" lg:text-lg border-2 border-gray-200">
+                    <td className=" lg:text-lg border-2 border-teal-300">
                       {note.Aurl ? (
                         <a
                           href={note.Aurl}

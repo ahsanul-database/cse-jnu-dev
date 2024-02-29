@@ -9,9 +9,9 @@ const StudentIDCard = ({ item }) => {
     e.preventDefault();
     setIsFlipped(!isFlipped);
   };
-  const value = `https://csejnu13.netlify.app/students/profileCard/${item.id}`;
+  const value = `https://ambiguity13.netlify.app/students/profileCard/${item.id}`;
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center text-black">
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
         <div
           onClick={handleClick}
